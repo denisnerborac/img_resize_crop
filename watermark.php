@@ -12,11 +12,13 @@ $y = 0;
 $w = imagesx($png_image) - 1;
 $z = imagesy($png_image) - 1;
 
+//borders
 imageline($png_image, $x, $y, $x, $y+$z, $black);
 imageline($png_image, $x, $y, $x+$w, $y, $black);
 imageline($png_image, $x+$w, $y, $x+$w, $y+$z, $black);
 imageline($png_image, $x, $y+$z, $x+$w ,$y+$z, $black);
 
+//diagonal
 imagedashedline($png_image, 150, 0, 0, 150, $black);
 
 imagepng($png_image);

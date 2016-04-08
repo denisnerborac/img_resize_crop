@@ -1,22 +1,16 @@
-# Image Convert Resize and Crop
+# Image lines watermark
 ----------
 
 *** Description ***
 -----
+A script that adds some lines over an image in order to protect it from stealing.
 
-An image tool class for :
-
- - Converting
- - Resizing
- - Cropping
- - Percent and dimensions mode
- - Keep ratio
- - PNG, JPEG, GIF support
- - JPEG quality (0-100)
- - PNG compression (1-9)
- - Native shell mode vs GD (default)
-
-*** How to use ***
+*** Instructions ***
 -----
 
-Look at index.php
+ 1. Draw 4 lines (diagonal right-left, diagonal left-right, horizontal, vertical
+ 2. Make it a function with following arguments :
+ - width
+ - height
+ - border color
+ - lines color
