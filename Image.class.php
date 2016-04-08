@@ -2,10 +2,8 @@
 class Image{
 
 	public static $useGD = true;
-	public static $jpeg_quality = 90; // 0-100
-	public static $png_compression = 0; // 1-9
 
-	public static function resize($source_path, $dest_path, $width = 0, $height = 0, $percent = 0, $crop = false, $dest_type = IMAGETYPE_JPEG) {
+	public static function resize($source_path, $dest_path, $width = 0, $height = 0, $percent = 0, $crop = false, $dest_type = IMAGETYPE_JPEG, $jpeg_quality = 90, $png_compression = 0) {
 
 		list($source_width, $source_height, $source_type) = getimagesize($source_path);
 
@@ -73,17 +71,17 @@ class Image{
 				break;
 				case IMAGETYPE_JPEG:
 				$dest_path .= '.jpg';
-				imagejpeg($thumb, $dest_path, self::$jpeg_quality);
+				imagejpeg($thumb, $dest_path, $jpeg_quality);
 				break;
 				case IMAGETYPE_PNG:
 				$dest_path .= '.png';
-				imagepng($thumb, $dest_path, self::$png_compression);
+				imagepng($thumb, $dest_path, $png_compression);
 				break;
 			}
 		} else {
 			$cmd = '/usr/bin/convert -resize '.$new_width.'x'.$new_height.' "'.$source.'" "'.$dest_path.'"';
 			shell_exec($cmd) ;
-			$cmd = '/usr/bin/convert -gravity Center -quality '.self::$jpeg_quality.' -crop '.$width.'x'.$height.'+0+0 -page '.$width.'x'.$height.' "'.$dest_path.'" "'.$dest_path.'"';
+			$cmd = '/usr/bin/convert -gravity Center -quality '.$jpeg_quality.' -crop '.$width.'x'.$height.'+0+0 -page '.$width.'x'.$height.' "'.$dest_path.'" "'.$dest_path.'"';
 			shell_exec($cmd);
 		}
 
