@@ -9,11 +9,11 @@
 
 May the force be with you xD
 
-*** How to use :gift: ***
+*** How to use ***
 -----
 Look at index.php
 
-*** Your reward ***
+*** Your reward :gift: ***
 -----
 A fully functional image tool class for :
 
