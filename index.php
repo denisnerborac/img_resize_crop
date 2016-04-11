@@ -1,4 +1,3 @@
-<?php
-require 'Image.class.php';
+<h1>Resize and Crop image</h1>
 
-Image::resize($img_source = 'img/image.jpeg', $img_dest = 'img/image-thumb', $width = 200, $height = 200, $percent = 0, $crop = true, $format = IMAGETYPE_PNG);
+<a href="resize.php">Get ready !</a>
